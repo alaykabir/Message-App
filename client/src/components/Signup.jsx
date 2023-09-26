@@ -3,20 +3,26 @@ import style from "styled-components";
 import "../style/Signup.css";
 
 function Signup() {
-  const [values, setValues] = useState({
-    username: "",
+  const [id, setId] = useState({
     email: "",
     password: "",
     confirmPassword: "",
   });
 
-  const handleChange = (event) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
+  const handleChange = (e) => {
+    setId({ ...id, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // handleValidation();
   };
+
+  //Do the Validation
+
+  // const handleValidation = () => {
+  //   const { password, confirmPassword, email } = id;
+  // };
 
   return (
     <>
@@ -60,7 +66,7 @@ function Signup() {
         </form>
         <p>
           Already have an account?{" "}
-          <a href="" class="a2">
+          <a href="/signin" class="a2">
             Sign In!
           </a>
         </p>
